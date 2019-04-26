@@ -15,22 +15,6 @@
 <h2>Medical Questionnaire</h2>
 
 <form>
-
-  <fieldset class="form-group">
-    <legend>Owner Info</legend>
-
-    <div class="form-group">
-      <label for="ownername">Owner name</label>
-      <input class="form-control" type="text" id="ownername" placeholder="Your Name">
-    </div><!-- form-group -->
-
-    <div class="form-inline">
-      <label for="owneremail">Email address</label>
-      <input class="form-control mx-sm-3" type="email" id="owneremail" aria-describedby="emailHelp" placeholder="Enter email">
-      <small class="form-text text-muted" id="emailHelp">We'll never share your email</small>
-    </div><!-- form-group -->
-
-  </fieldset><!-- fieldset -->
   <fieldset class="form-group">
 
     <legend>Pet Info</legend>
@@ -38,28 +22,20 @@
     <div class="form-group">
       <label for="petname">Pet name</label>
       <input class="form-control" type="text" id="petname" placeholder="Your Pet's name">
-    </div><!-- form-group -->
+    </div>
 
     <div class="form-group">
       <label for="pettype">Pet type</label>
-      <select class="form-control" id="pettype">
+      <select class="custom-select" id="pettype">
         <option>Choose</option>
         <option value="cat">Dog</option>
         <option value="cat">Cat</option>
         <option value="bird">Other</option>
       </select>
-    </div><!-- form-group -->
-
-    <div class="form-group">
-      <label for="reasonforvisit">Reason for today's visit</label>
-      <textarea class="form-control" id="reasonforvisit" rows="3"></textarea>
-    </div><!-- form-group -->
-  </fieldset><!-- fieldset -->
+    </div>
 
   <fieldset class="form-group">
-
     <legend>Pet Medical Data</legend>
-
     <div class="form-group">
       <label class="d-block">Has your pet been spayed or neutered?</label>
 
@@ -67,39 +43,41 @@
         <label class="form-check-label">
           <input class="form-check-input" type="radio" name="spayneut" value="yes" checked> Yes
         </label>
-      </div><!-- form-check -->
+      </div>
 
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input class="form-check-input" type="radio" name="spayneut" value="no"> No
-        </label>
-      </div><!-- form-check -->
-
-    </div><!-- form-group -->
+      <div class="custom-control custom-radio">
+        <input class="custom-control-input" type="radio" id="spayneut" name="spayneut" value="no">
+        <label class="custom-control-label" for="spayneut">No</label>
+      </div>
+    </div>
 
     <div class="form-group">
       <label>Has the pet had any of the following in the past 30 days</label>
 
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox"> Abdominal pain
+      <div class="custom-control custom-checkbox">
+        <label class="custom-control-label">
+          <input class="custom-control-input" type="checkbox"> Abdominal pain
         </label>
-      </div><!-- form-check -->
+      </div>
 
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox"> Lack of appetite
-        </label>
-      </div><!-- form-check -->
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="ill-weakness"> 
+        <label class="custom-control-label" for="ill-weakness">Weakness</label>
+      </div>
+    </div>
 
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox"> Weakness
-        </label>
-      </div><!-- form-check -->
-    </div><!-- form-group -->
+    <div class="form-group">
+      <label for="painlevel">Level of pain?</label>
+      <input type="range" class="custom-range" min="0" max="10" id="painlevel">
+    </div>
 
-  </fieldset><!-- form-group -->
+    <div class="form-group">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="petphoto">
+        <label class="custom-file-label" for="petphoto">Upload Photo</label>
+      </div>
+    </div>
+  </fieldset>
 
   <button class="btn btn-primary" type="submit">Submit</button>
 </form>
